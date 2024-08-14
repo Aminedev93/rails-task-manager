@@ -1,0 +1,12 @@
+<div class="card">
+  <%= form_with model: task do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :details %>
+      <%= f.text_area :details %>
+      <%= f.label :completed unless task.new_record?  %>
+      <%= f.check_box :completed unless task.new_record? %>
+      <%= f.submit %>
+  <% end %>
+</div>
+<%= link_to "Go Back", tasks_path %>
